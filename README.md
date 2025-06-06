@@ -46,4 +46,8 @@ python manage.py migrate
 ```bash
 python manage.py runserver
 ```
+Демонстрация работы через Postman
+
+![2025-06-06_17-58-20](https://github.com/user-attachments/assets/9b4d926b-6720-43c2-b1ac-927b21c5340b)
+
 
