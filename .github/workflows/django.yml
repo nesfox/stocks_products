@@ -55,8 +55,8 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: 89.104.68.85
-          username: ubuntu
-          password: 1234
+          username: root
+          password: DHFnINtwfUiJvQ4V
           script: |
             echo "Успешное подключение!"
             pwd
