@@ -56,10 +56,8 @@ jobs:
         with:
           host: 89.104.68.85
           username: root
-          password: ${{ secrets.SSH }}
+          password: 1234
           script: |
             echo "Успешное подключение!"
             pwd
             ls
-        env:
-          LOG_LEVEL: debug
