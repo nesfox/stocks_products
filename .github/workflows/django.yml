@@ -55,7 +55,7 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: 89.104.68.85
-          username: postgres
+          username: ubuntu
           password: 1234
           script: |
             echo "Успешное подключение!"
