@@ -40,7 +40,7 @@ jobs:
       - name: Линтер
         run: flake8 stocks_products --extend-ignore=E501,E401,E302,W293,W391,W292
       - name: Тесты
-        run: python stocks_products/manage.py test
+        run: python stocks_products/manage.py tests
         env:
           PG_HOST: ${{ secrets.PG_HOST }}
           PG_NAME: ${{ secrets.PG_NAME }}
