@@ -56,7 +56,7 @@ jobs:
         with:
           host: 89.104.68.85
           username: root
-          password: DHFnINtwfUiJvQ4V
+          password: ${{ secrets.PASSWORD_SERVER }}
           script: |
             echo "Успешное подключение!"
             pwd
