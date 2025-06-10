@@ -23,4 +23,4 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Линтер
-        run: flake8 stocks_products --ignore E501, E401, E302, W293, W391, W292
+        run: flake8 stocks_products --ignore=E501,E401,E302,W293,W391,W292
