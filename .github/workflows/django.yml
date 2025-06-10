@@ -12,6 +12,20 @@ jobs:
       PG_PASSWORD: ${{ secrets.PG_PASSWORD }}
       PG_USER: ${{ secrets.PG_USER }}
       PG_PORT: ${{ secrets.PG_PORT }}
+    services:
+      postgres_main:
+        image: postgres: latest
+        env:
+          POSTGRES_USERS: ${{ secrets.PG_USER }}
+          POSTGRES_PASSWORD: ${{ secrets.PG_PASSWORD }}
+          POSTGRES_DB: ${{ secrets.PG_NAME }}
+        ports: 5432
+        options:
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 5
+
     steps:
       - name: Проверка изменений
         uses: actions/checkout@v2
@@ -24,3 +38,11 @@ jobs:
 
       - name: Линтер
         run: flake8 stocks_products --extend-ignore=E501,E401,E302,W293,W391,W292
+      - name: Тесты
+        run: python stocks_products/manage.py test
+        env:
+          PG_HOST: ${{ secrets.PG_HOST }}
+          PG_NAME: ${{ secrets.PG_NAME }}
+          PG_PASSWORD: ${{ secrets.PG_PASSWORD }}
+          PG_USER: ${{ secrets.PG_USER }}
+          PG_PORT: ${{ secrets.PG_PORT }}
