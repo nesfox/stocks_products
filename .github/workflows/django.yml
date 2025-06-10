@@ -56,7 +56,7 @@ jobs:
         with:
           host: 89.104.68.85
           username: root
-          password: 1305
+          password:
           script:
             pwd
             ls
